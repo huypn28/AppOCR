@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TableRow
+            android:layout_marginTop="200dp"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            >
+            <Button
+                android:id="@+id/button_capture"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Capture"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                />
+            <Button
+                android:id="@+id/button_manage"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Manage"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                />
+
+        </TableRow>
+    </LinearLayout>
+
+</layout>
