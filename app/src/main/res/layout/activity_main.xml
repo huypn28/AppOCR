@@ -1,42 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-        android:orientation="vertical"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <TableRow
             android:layout_marginTop="200dp"
             android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            >
-            <Button
-                android:id="@+id/button_capture"
-                android:layout_width="80dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:id="@+id/button_scannerOCR"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Capture"
-                android:textColor="@color/white"
-                android:textSize="18sp"
                 android:layout_weight="1"
+                android:background="@color/purple_500"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="20dp"
-                />
-            <Button
-                android:id="@+id/button_manage"
-                android:layout_width="80dp"
+                android:layout_marginTop="20dp">
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_camera"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:contentDescription="Scanner OCR" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan Order Capture"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_scannerQR"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Manage"
-                android:textSize="18sp"
                 android:layout_weight="1"
+                android:background="@color/purple_500"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="20dp"
-                />
+                android:layout_marginTop="20dp">
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_qrcode"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:contentDescription="Scanner QR" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scanner QR"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
 
         </TableRow>
-    </LinearLayout>
 
-</layout>
+        <TableRow
+            android:layout_marginTop="50dp"
+            android:layout_width="300dp"
+            android:gravity="center_horizontal"
+            android:layout_height="100dp">
+
+
+            <LinearLayout
+                android:id="@+id/button_manage"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_500"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp">
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_manage"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:contentDescription="Scanner QR" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manager"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+        </TableRow>
+
+
+
+
+
+
+    </TableLayout>
+
+</LinearLayout>

@@ -1,24 +1,29 @@
 package com.example.appocr.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import com.example.appocr.R
 
 class MainActivity : AppCompatActivity() {
-    private val REQUEST_IMAGE_CAPTURE=1
-    val captureButton: Button=findViewById(R.id.button_capture)
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        captureButton.setOnClickListener{
-            dispatchTakePictureIntent()
+        val manageButton: LinearLayout = findViewById(R.id.button_manage)
+        manageButton.setOnClickListener {
+            navigateToManageActivity()
         }
 
     }
 
-    private fun dispatchTakePictureIntent() {
-        TODO("Not yet implemented")
+    private fun navigateToManageActivity() {
+        val intent = Intent(this, ManageActivity::class.java)
+        startActivity(intent)
     }
 }
