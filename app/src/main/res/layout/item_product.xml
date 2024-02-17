@@ -32,6 +32,7 @@
             android:scaleType="centerCrop"
             />
         <TextView
+
             android:id="@+id/tvProductID"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -54,6 +55,7 @@
             app:layout_constraintTop_toTopOf="@id/tvProductID"
             android:contentDescription="Edit Icon"
         />
+
         <TextView
             android:id="@+id/tvProductName"
             android:layout_width="wrap_content"
@@ -62,11 +64,21 @@
             android:maxLines="3"
             android:textColor="@color/black"
             android:textSize="15sp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/tvProductID"
             app:layout_constraintTop_toBottomOf="@id/tvProductID"
             android:lines="1" />
-
+        <ImageView
+            android:id="@+id/imageViewDelete"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_delete"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvProductName"
+            android:contentDescription="Edit Icon"
+            />
 
 
         <TableRow

@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppOCR"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.AddProductActivity"
+            android:name=".Activity.ManageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.ManageActivity"></activity>
+        <activity android:name=".Activity.AddProductActivity"></activity>
+        <activity android:name=".Activity.EditProductActivity"></activity>
     </application>
 
 </manifest>

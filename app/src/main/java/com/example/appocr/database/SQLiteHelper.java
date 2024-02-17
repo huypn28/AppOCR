@@ -25,7 +25,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String sql = "CREATE TABLE inventory("+
                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                "ten TEXT,quantity TEXT,gia TEXT)";
+                "ten TEXT,soluong TEXT,gia TEXT)";
 
         sqLiteDatabase.execSQL(sql);
 
@@ -43,15 +43,15 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public List<Inventory> getAll(){
         List<Inventory> list = new ArrayList<>();
         SQLiteDatabase st = getReadableDatabase();
-        String order = "id DESC";
+        String order = "id ASC";
         Cursor rs = st.query("inventory",null,null,
                 null,null,null,order);
         while (rs != null && rs.moveToNext()) {
             int id = rs.getInt(0);
             String ten = rs.getString(1);
-            int quantity = rs.getInt(2);
+            int soluong = rs.getInt(2);
             String gia = rs.getString(3);
-            list.add(new Inventory(id,ten,quantity,gia));
+            list.add(new Inventory(id,ten,soluong,gia));
         }
         return list;
     }
@@ -59,7 +59,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public long addInventory (Inventory sv) {
         ContentValues values = new ContentValues();
         values.put("ten",sv.getTen());
-        values.put("quantity",sv.getQuantity());
+        values.put("soluong",sv.getQuantity());
         values.put("gia",sv.getGia());
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         return sqLiteDatabase.insert("inventory",null,values);
@@ -74,9 +74,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         while (rs != null && rs.moveToNext()) {
             int id = rs.getInt(0);
             String ten = rs.getString(1);
-            int quantity = rs.getInt(2);
+            int soluong = rs.getInt(2);
             String gia = rs.getString(3);
-            list.add(new Inventory(id,ten,quantity, gia));
+            list.add(new Inventory(id,ten,soluong, gia));
         }
         return list;
     }
@@ -84,7 +84,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public int update (Inventory sv) {
         ContentValues values = new ContentValues();
         values.put("ten",sv.getTen());
-        values.put("quantity",sv.getQuantity());
+        values.put("soluong",sv.getQuantity());
         values.put("gia",sv.getGia());
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         String whereClause = "id= ?";
